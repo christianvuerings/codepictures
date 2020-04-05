@@ -1,32 +1,26 @@
 const got = require("got");
 const fs = require("fs");
 
+/* To Update the images file */
 // const getImages = async () => {
 // 	let images = [];
-
 // 	for (let i = 0; i < 100; i++) {
 // 		console.log(`Fetching pictures ${i}`);
 // 		const response = await got(
 // 			`https://picsum.photos/v2/list?page=${i}&limit=100`
 // 		).json();
-
 // 		images = [...images, ...response];
-
 // 		if (!response || !response.length) {
 // 			return images;
 // 		}
 // 	}
-
 // 	return images;
 // };
-
 // let basePictures;
-
 // (async () => {
 // 	basePictures = await (await getImages()).map(
 // 		({ id }) => `https://i.picsum.photos/id/${id}/200/200.jpg`
 // 	);
-
 // })();
 
 const basePictures = JSON.parse(fs.readFileSync("./pictures.json"));
