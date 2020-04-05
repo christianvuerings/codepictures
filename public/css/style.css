@@ -1,0 +1,462 @@
+/*
+Palette:
+
+Black: #323032
+Light-Black: #686c6d
+Blue: #11779F
+Red: #B32728
+White: #fff
+Grey: #D6D2C9
+
+*/
+
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+.visuallyHidden {
+	display: none;
+}
+
+#app {
+	position: relative;
+	display: block;
+	max-width: 1000px;
+	width: 100%;
+}
+
+#info {
+	position: relative;
+	width: 100%;
+	height: 70px;
+	margin-bottom: 20px;
+}
+
+body {
+	margin: 0;
+	background: #1c0026;
+	color: #111;
+	font-family: "Special Elite", sans-serif;
+}
+
+* {
+	transition: 0.1s ease-in-out;
+	z-index: 1;
+}
+
+.center {
+	text-align: center;
+}
+
+.above {
+	z-index: 3 !important;
+}
+
+#about-button {
+	position: absolute;
+	right: 0;
+	margin-right: 20px;
+	margin-top: 20px;
+	border: 2px solid #fff;
+	background: transparent;
+	color: #fff;
+	font-size: 16px;
+}
+
+#about-button.open {
+	color: #323032;
+	background: #fff;
+}
+
+#about-button:hover {
+	background: rgb(255, 255, 255, 0.2);
+}
+
+#about-window {
+	position: absolute;
+	width: 80%;
+	left: 50%;
+	transform: translateX(-50%);
+	background: #fff;
+	top: 20px;
+	border-radius: 16px;
+	margin-bottom: 200px;
+	max-width: 1024px;
+}
+
+#about-window ul {
+	position: relative;
+	list-style: square !important;
+	padding: 50px;
+	padding-top: 0;
+	margin-top: 0;
+}
+#about-window li {
+	margin-bottom: 8px;
+}
+
+#about-window h2 {
+	text-align: center;
+}
+
+#about-window h3 {
+	text-align: center;
+}
+
+#about-window a {
+	width: 300px;
+	margin: 0 auto;
+	text-align: center;
+	color: #323032;
+}
+
+#about-window a:hover {
+	color: #11779f;
+}
+
+#server-message {
+	position: fixed;
+	display: none;
+	width: 400px;
+	background: #fff;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -100%);
+	border-radius: 16px;
+}
+
+#server-message h3 {
+	text-align: center;
+}
+
+#server-message button {
+	position: relative;
+	margin: 2%;
+	border-radius: 3px;
+	border: 2px solid #686c6d;
+	padding: 4px;
+	width: 96%;
+	font-size: 16px;
+	background: #686c6d;
+	color: #fff;
+}
+
+#server-message button:hover {
+	background: #11779f;
+}
+
+#afk-window {
+	position: fixed;
+	display: none;
+	width: 400px;
+	background: #fff;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -100%);
+	border-radius: 16px;
+}
+
+#afk-window h3 {
+	text-align: center;
+}
+
+#afk-window button {
+	position: relative;
+	margin: 2%;
+	border-radius: 3px;
+	border: 2px solid #686c6d;
+	padding: 4px;
+	width: 96%;
+	font-size: 16px;
+	background: #686c6d;
+	color: #fff;
+}
+
+#afk-window button:hover {
+	background: #11779f;
+}
+
+#overlay {
+	position: fixed;
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	background: rgb(60, 60, 60, 0.9);
+	z-index: 2 !important;
+}
+
+#join-game {
+	position: absolute;
+	max-width: 500px;
+	width: 100%;
+	background: #fff;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 16px;
+}
+
+#join-game h1 {
+	color: #111;
+	font-size: 32px;
+	margin: 0;
+	padding: 20px;
+	text-align: center;
+}
+
+#join-game .join-form {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 0 12px;
+}
+
+#join-game .join-input {
+	display: flex;
+	margin-bottom: 16px;
+	flex-direction: column;
+	text-align: left;
+	width: 100%;
+}
+#join-game .join-input:last-child {
+	margin-bottom: 0;
+}
+
+#join-game .join-input input {
+	border: 1px solid #1c0026;
+	border-radius: 8px;
+	font-size: 100%;
+	padding: 8px;
+}
+#join-game .join-input label {
+	padding-bottom: 4px;
+}
+
+#join-game .join-buttons {
+	display: flex;
+	margin: 28px 0 12px;
+}
+
+#join-game button {
+	font-size: 16px;
+	width: 100%;
+	background: #111;
+	color: #fff;
+	margin: 0 12px;
+}
+
+#join-game #join-enter {
+	float: left;
+}
+
+#join-game #join-enter:hover {
+	background: #222;
+}
+
+#join-game #join-create:hover {
+	background: #222;
+}
+
+#join-game #error-message {
+	text-align: center;
+	margin: 32px 0 0;
+}
+
+button {
+	cursor: pointer;
+	font-family: "Special Elite", sans-serif;
+	border-radius: 12px;
+	border-style: solid;
+	font-size: 16px;
+	padding: 12px 16px;
+}
+
+#leave-room {
+	position: absolute;
+	margin-left: 20px;
+	margin-top: 20px;
+	border: 2px solid #fff;
+	background: transparent;
+	color: #fff;
+	font-size: 16px;
+}
+
+#leave-room:hover {
+	background: rgb(255, 255, 255, 0.2);
+}
+
+#title {
+	text-align: center;
+	padding: 16px;
+}
+
+#title h1 {
+	color: #fff;
+	font-size: 22px;
+	margin: 0;
+	padding: 0;
+}
+
+#title #room-name {
+	font-size: 18px;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
+
+#left {
+	width: 100%;
+	max-width: 320px;
+	margin-right: 36px;
+	margin-top: 95px;
+}
+
+#content {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+#players {
+	position: relative;
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+#players #panel {
+	background: #fff;
+	border: 2px solid #fff;
+	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+}
+
+#players h2 {
+	color: #fff;
+	text-align: center;
+	margin: 0;
+}
+
+#players #panel .join-colors-buttons {
+	display: flex;
+}
+
+#players #panel #join-red {
+	color: #fff;
+	background: #b32728;
+	margin: 4px;
+	width: 100%;
+}
+
+#players #panel #join-red:hover {
+	background: #8a1e1e;
+}
+
+#players #panel #join-blue {
+	color: #fff;
+	background: #11779f;
+	margin: 4px;
+	width: 100%;
+}
+
+#players #panel #join-blue:hover {
+	background: #0c5673;
+}
+
+#players #panel #randomize-teams {
+	background: #1c0026;
+	color: #fff;
+	margin: 4px;
+	position: relative;
+	max-width: 100%;
+}
+
+#players #panel #randomize-teams:hover {
+	background: #323032;
+}
+
+#players #panel ul {
+	display: inline-block;
+	position: relative;
+	list-style: none;
+	margin: 0;
+	padding: 3px;
+	color: #323032;
+	padding: 3px;
+	text-align: center;
+}
+
+#players #panel #undefined-list {
+	width: 100%;
+}
+
+#players #panel #red-team {
+	width: 50%;
+	float: left;
+	color: #b32728;
+}
+
+#players #panel #blue-team {
+	width: 50%;
+	text-align: center;
+	color: #11779f;
+}
+
+#card-packs {
+	position: relative;
+	width: 100%;
+	margin: 0;
+}
+
+#card-packs h2 {
+	color: #fff;
+	text-align: center;
+	margin: 0;
+	line-height: 20px;
+}
+
+#card-packs p {
+	color: #fff;
+	text-align: center;
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+#card-packs button {
+	width: 100%;
+	margin: 0;
+	margin-bottom: 20px;
+	border: 2px solid #fff;
+	color: #fff;
+	background: #323032;
+	font-size: 16px;
+}
+
+#card-packs button.enabled {
+	background: #fff;
+	color: #323032;
+	font-weight: bold;
+}
+
+#card-packs button:hover {
+	background: #686c6d;
+}
+
+#controls {
+	position: relative;
+	width: 100%;
+}
+
+#controls label {
+	color: #fff;
+}
+
+#controls input {
+	width: 100%;
+	margin: 0;
+}

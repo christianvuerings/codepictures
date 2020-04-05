@@ -1,0 +1,238 @@
+#info #score {
+	position: relative;
+	display: block;
+	color: #fff;
+	font-size: 40px;
+	font-weight: bold;
+	width: 33%;
+	height: 100%;
+	margin: 0;
+	line-height: 40px;
+	padding-top: 35px;
+	float: left;
+	margin-left: 0.5%;
+}
+
+#info #score #score-red {
+	color: #b32728;
+}
+
+#info #score #score-blue {
+	color: #11779f;
+}
+
+#info #turn {
+	position: relative;
+	display: block;
+	width: 33%;
+	height: 100%;
+	margin: 0;
+	font-size: 35px;
+	text-align: center;
+	color: #fff;
+	float: left;
+}
+
+#info .red {
+	color: #b32728 !important;
+}
+
+#info .blue {
+	color: #11779f !important;
+}
+
+#info #end-turn {
+	position: absolute;
+	display: block;
+	float: right;
+	margin-right: 0.5%;
+	bottom: 0;
+	right: 0;
+	width: 19%;
+	font-size: 16px;
+	background: transparent;
+	border: 2px solid #fff;
+	color: #fff;
+	text-decoration: none;
+}
+
+#info #end-turn:hover {
+	background: rbga(255, 255, 255, 0.2);
+}
+
+#info #end-turn:disabled {
+	background: transparent;
+	border: 2px solid #686c6d;
+	color: #686c6d;
+	cursor: default;
+}
+
+#board {
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+}
+
+#board .row {
+	position: relative;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#board .row .tile {
+	background: #fff;
+	border: 4px solid #fff;
+	color: #323032;
+	display: inline-block;
+	font-size: 16px;
+	height: 0;
+	margin: 0.5%;
+	overflow: hidden;
+	padding: 0 0 18%;
+	position: relative;
+	width: 19%;
+}
+
+#board .row .tile img {
+	max-width: 100%;
+}
+
+#board .row .tile:hover {
+	transform: scale(0.98);
+}
+
+#board .row .tile:active {
+	transform: scale(0.95);
+}
+
+#board .s {
+	font-weight: bold;
+}
+
+#board .s.r {
+	color: #b32728;
+	background: rgb(236, 170, 170);
+	border-color: #b32728;
+}
+
+#board .s.b {
+	color: #11779f;
+	background: rgb(168, 216, 235);
+	border-color: #11779f;
+}
+
+#board .s.d {
+	background: #000;
+	border-color: #000;
+}
+
+#board .s.d::before {
+	content: " ";
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: block;
+	position: absolute;
+}
+
+#board .s.d.h {
+	background: #fff;
+	border-color: #fff;
+}
+
+#board .s.d.h:hover {
+	border-color: #323032;
+}
+
+#board .flipped img {
+	opacity: 0.3;
+}
+
+#board .flipped.n {
+	background: rgb(211, 191, 175) !important;
+	border-color: rgb(211, 191, 175);
+	color: #fff;
+}
+
+#board .flipped.r {
+	border-color: #b32728;
+	background: #b32728;
+	color: #fff;
+}
+
+#board .flipped.b {
+	border-color: #11779f;
+	background: #11779f;
+	color: #fff;
+}
+
+#board .flipped.d {
+	border-color: #000000;
+	background: #000000;
+	color: #fff;
+}
+
+#toggles {
+	position: relative;
+	font-size: 0;
+	width: 100%;
+	margin-top: 20px;
+}
+
+#toggles .toggle {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 12px;
+	position: relative;
+	float: left;
+	margin: 0.5%;
+}
+
+#toggles #new-game {
+	position: relative;
+	right: 0;
+	float: right;
+	margin: 0.5%;
+	font-size: 16px;
+	background: transparent;
+	border: 2px solid #fff;
+	color: #fff;
+	text-decoration: none;
+}
+
+#toggles #new-game:hover {
+	background: rbga(255, 255, 255, 0.2);
+}
+
+#toggles .toggle button {
+	margin: 0;
+	font-size: 16px;
+	background: transparent;
+	border: 2px solid transparent;
+	color: rgba(255, 255, 255, 0.5);
+	text-decoration: none;
+}
+
+#toggles .toggle button:hover {
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+}
+
+#toggles .toggle button:disabled {
+	background: transparent;
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	color: #fff;
+	cursor: default;
+	text-decoration: underline;
+}
+
+#toggles .toggle button:disabled:hover {
+	color: #fff;
+}
+
+#toggles #player-difficulty {
+	display: none;
+}
